@@ -6,21 +6,108 @@ A curated repository of agent commands and prompt templates, specifically for th
 
 This repository provides ready-to-use building blocks for effective, agent-driven development:
 
-- 14 specialized agents — architecture, languages, testing, documentation, research, AEC
-- 2 command workflows — reusable, multi-step commands for common tasks
-- 6 prompt templates — task-focused prompts to steer assistants
-- AEC analysis utilities — Dynamo/Grasshopper analysis scripts for extracting structure and flows
+- **14 specialized agents** across architecture, languages, testing, documentation, and AEC
+- **2 workflow commands** for context generation and experimentation
+- **4 prompt templates** for precision writing and accuracy
+- **3 skills** for AEC analysis and markdown conversion
+
+All organized into **10 focused plugins** for granular installation via Claude Code marketplace, or install skills via the manifest-driven scripts.
 
 ## Repository structure
 
 ```
-agents/                      # Specialized agent definitions (Claude Code/Codex)
-commands/                    # Simple workflow/command orchestrators
-prompts/                     # Task-specific prompt templates
-├── dynamo-analyser/         # Dynamo (.dyn) analysis utilities and prompts
-└── grasshopper-analyser/    # Grasshopper (.gh/.ghx) analysis utilities and prompts
+.claude-plugin/
+└── marketplace.json         # Plugin marketplace definition
+plugins/                     # Plugin-based organization (10 plugins)
+├── aec-analysis-toolkit/
+│   ├── agents/
+│   └── skills/
+├── backend-architecture/
+│   └── agents/
+├── python-development/
+│   └── agents/
+├── dotnet-development/
+│   └── agents/
+├── quality-and-testing/
+│   └── agents/
+├── documentation-and-visualization/
+│   └── agents/
+├── research-and-analysis/
+│   └── agents/
+├── workflow-orchestration/
+│   └── commands/
+├── prompt-templates/
+│   └── commands/
+└── markdown-utilities/
+    └── skills/
+skills-registry.json        # Skill manifest (name → plugin path)
+install-skills.sh            # Installation script (Unix/macOS/Linux)
+install-skills.bat           # Installation script (Windows)
 README.md
 LICENSE
+CLAUDE.md
+```
+
+## Installation
+
+### Option 1: [Claude Code marketplace](https://docs.claude.com/en/docs/claude-code/plugin-marketplaces) (recommended)
+
+Add this marketplace to Claude Code for granular plugin installation:
+
+```bash
+/plugin marketplace add sonomirco/agents-and-commands
+```
+
+This makes **10 focused plugins** available for installation without loading anything into context. Install only what you need:
+
+```bash
+# Install specific plugins
+/plugin install aec-analysis-toolkit
+/plugin install python-development
+/plugin install backend-architecture
+
+# Or install multiple at once
+/plugin install aec-analysis-toolkit python-development quality-and-testing
+```
+
+**Benefits:**
+- Install only the agents, commands, and skills you need
+- Minimal token usage - plugins load only their specific resources
+- Easy updates via `/plugin update`
+- Browse available plugins with `/plugin list`
+
+### Option 2: Quick install (skills only)
+
+Install all skills with one command:
+
+```bash
+# Unix/macOS/Linux
+./install-skills.sh
+
+# Windows
+install-skills.bat
+```
+
+Or install specific skills:
+
+```bash
+./install-skills.sh grasshopper-analyzer dynamo-analyzer
+```
+
+### Option 3: Manual installation
+
+Inspect the manifest to view available skills and their plugin paths:
+
+```bash
+jq '.skills[] | {name, path}' skills-registry.json
+```
+
+Copy the desired skill directories (paths are manifest relative) to `~/.claude/skills/`:
+
+```bash
+cp -r plugins/aec-analysis-toolkit/skills/grasshopper-analyzer ~/.claude/skills/
+cp -r plugins/aec-analysis-toolkit/skills/dynamo-analyzer ~/.claude/skills/
+cp -r plugins/markdown-utilities/skills/markdown-to-xml ~/.claude/skills/
 ```
 
 ## Usage
@@ -52,6 +139,28 @@ Prompt templates in `prompts/` help set intent and constraints quickly. AEC-focu
 - `prompts/reduce-hallucination.md` — Improve reliability and source awareness
 - `prompts/dynamo-analyser/` — Extract nodes/flows from Dynamo scripts; generate flow diagrams
 - `prompts/grasshopper-analyser/` — Analyze .gh/.ghx graphs; extract C# nodes; diagram connections
+
+### Skills
+
+Claude Code skills live inside plugin directories. `skills-registry.json` is the canonical manifest used by the installation scripts; update it whenever skills are added, moved, or removed. Copy the manifest-listed directories to `~/.claude/skills/` (or run the install scripts) to make them globally available, then invoke by name in natural language or via the Skill tool.
+
+**grasshopper-analyzer** — Analyze Grasshopper (.ghx/.xml) files
+- Location: `plugins/aec-analysis-toolkit/skills/grasshopper-analyzer/` (see manifest)
+- Input: Path to .ghx or .xml file (binary .gh not supported)
+- Output: Comprehensive Markdown report with workflow topology, custom scripts, algorithmic analysis, and C# migration guidance
+- Usage: `"Use grasshopper-analyzer to analyze this definition"`
+
+**dynamo-analyzer** — Analyze Dynamo (.dyn) graphs
+- Location: `plugins/aec-analysis-toolkit/skills/dynamo-analyzer/` (see manifest)
+- Input: Path to .dyn file (Dynamo 2.x JSON)
+- Output: Comprehensive Markdown report with workflow topology, Python/DesignScript code, Revit API patterns, and C# migration guidance
+- Usage: `"Analyze this Dynamo graph with dynamo-analyzer"`
+
+**markdown-to-xml** — Convert markdown articles to XML format
+- Location: `plugins/markdown-utilities/skills/markdown-to-xml/` (see manifest)
+- Input: Article name from Obsidian vault
+- Output: XML-formatted article with preserved formatting (bold, blockquotes, headers)
+- Usage: `"Convert this article to XML"`
 
 ### Plan validation workflow
 
@@ -120,6 +229,23 @@ MCP setup (optional):
 }
 ```
 
+## Available plugins
+
+The 14 agents, 2 commands, 4 prompts, and 3 skills are organized into **10 focused plugins** optimized for granular installation:
+
+| Plugin | Description | Agents | Commands | Skills |
+|--------|-------------|--------|----------|--------|
+| **aec-analysis-toolkit** | Dynamo/Grasshopper analysis with C# migration guidance | 2 | 0 | 2 |
+| **backend-architecture** | API design, microservices, security patterns | 3 | 0 | 0 |
+| **python-development** | Modern Python 3.12+, async, FastAPI/Django | 2 | 0 | 0 |
+| **dotnet-development** | C#/.NET with testing and performance | 1 | 0 | 0 |
+| **quality-and-testing** | TDD, plan validation, Codex integration | 2 | 0 | 0 |
+| **documentation-and-visualization** | Diagrams, prompts, technical writing | 2 | 0 | 0 |
+| **research-and-analysis** | Codebase research, document parsing | 2 | 0 | 0 |
+| **workflow-orchestration** | Context generation, experimental development | 0 | 2 | 0 |
+| **prompt-templates** | Precision writing, accuracy templates | 0 | 3 | 0 |
+| **markdown-utilities** | Markdown to XML conversion | 0 | 0 | 1 |
+
 ## Agent categories
 
 ### Architecture & system design
@@ -166,15 +292,105 @@ Use lighter models for quick, deterministic tasks; sonnet for day-to-day enginee
 
 ## Contributing
 
-To add new agents, commands, or prompts:
+To add new agents, commands, prompts, or skills:
 
-1. Use lowercase, hyphen-separated file names
-2. Place files in the appropriate directory (`agents/`, `commands/`, `prompts/`)
-3. Keep content concise, actionable, and production-focused
-4. For agents, include frontmatter with at least `name`, `description`, and optionally `model`
+1. **Keep everything generic**: All contributions must be generic and reusable. Carefully eliminate any specific references to:
+   - Personal projects or proprietary codebases
+   - Company names or internal tools
+   - Specific file paths or directory structures
+   - Personal workflows or Obsidian vaults
+   - API endpoints or internal services
 
-### Agent file template
-For more instrunctions check the [Claude Code documentation](https://docs.claude.com/en/docs/claude-code/sub-agents)
+2. **File naming**: Use lowercase, hyphen-separated file names
+3. **File placement**: Place in the appropriate plugin directory (e.g., `plugins/<plugin>/agents/`, `plugins/<plugin>/commands/`, `plugins/<plugin>/skills/`)
+4. **Content quality**: Keep concise, actionable, and production-focused
+5. **Frontmatter**: For agents, include at least `name`, `description`, and optionally `model`
+
+### Generic examples
+
+❌ Bad (specific): "Fetch data from the CompanyX API at https://internal.companyx.com/api"
+✅ Good (generic): "Fetch data from the API endpoint"
+
+❌ Bad (specific): "Read files from /Users/john/Documents/MyProject/"
+✅ Good (generic): "Read files from the project directory"
+
+❌ Bad (specific): "Connect to our MongoDB instance at prod-db-01"
+✅ Good (generic): "Connect to the database"
+
+### Templates
+
+For agent templates, check the [Claude Code documentation](https://docs.claude.com/en/docs/claude-code/sub-agents)
+
+For skill templates, check the [Claude Code skills documentation](https://docs.claude.com/en/docs/claude-code/agent-skills)
+
+## Sharing and distribution
+
+### Option 1: Claude Code marketplace (recommended)
+
+This repository is configured as a **Claude Code plugin marketplace**. Users simply add the marketplace:
+
+```bash
+/plugin marketplace add yourusername/agents-and-commands
+```
+
+Then install specific plugins:
+
+```bash
+/plugin install aec-analysis-toolkit python-development
+```
+
+**Benefits for users:**
+- Browse 10 focused plugins with `/plugin list`
+- Install only what they need
+- Minimal token usage (plugins load only their resources)
+- Easy updates with `/plugin update`
+
+### Option 2: Direct installation (skills only)
+
+Users clone and run installation scripts:
+
+```bash
+git clone https://github.com/sonomirco/agents-and-commands.git
+cd agents-and-commands
+./install-skills.sh
+```
+
+### Option 3: Individual resources
+
+Copy specific agents, commands, prompts, or skills:
+- Copy `agents/agent-name.md` to `.claude/agents/`
+- Copy manifest-listed skill directories (e.g., `plugins/aec-analysis-toolkit/skills/grasshopper-analyzer/`) to `~/.claude/skills/`
+- Copy commands or prompts as needed
+
+### Creating your own plugin marketplace
+
+1. Fork this repository
+2. Update `.claude-plugin/marketplace.json`:
+   - Change owner name, email, URL
+   - Update repository URLs (replace `sonomirco` with your GitHub username)
+   - Customize plugin descriptions
+3. Add/remove plugins to match your content
+4. Ensure all paths in `marketplace.json` are correct
+5. Push to GitHub
+6. Share with: `/plugin marketplace add your-github-username/your-repo`
+
+**Marketplace structure:**
+```json
+{
+  "name": "your-marketplace-name",
+  "owner": { "name": "...", "email": "...", "url": "..." },
+  "metadata": { "description": "...", "version": "1.0.0" },
+  "plugins": [
+    {
+      "name": "plugin-name",
+      "description": "...",
+      "agents": ["./plugins/sample-plugin/agents/agent.md"],
+      "commands": ["./plugins/sample-plugin/commands/command.md"],
+      "skills": ["./plugins/sample-plugin/skills/skill/SKILL.md"]
+    }
+  ]
+}
+```
 
 ## License
 

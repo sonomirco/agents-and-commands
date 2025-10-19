@@ -1,0 +1,276 @@
+{
+  "name": "aec-agents-and-tools",
+  "owner": {
+    "name": "Mirco Bianchini",
+    "email": "sonomirco@gmail.com",
+    "url": "https://github.com/sonomirco"
+  },
+  "metadata": {
+    "description": "Production-ready AEC (Architecture, Engineering, Construction) focused agents, commands, prompts, and skills for Claude Code - 14 agents, 2 commands, 4 prompts, 3 skills",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "aec-analysis-toolkit",
+      "source": "./plugins/aec-analysis-toolkit",
+      "description": "Complete toolkit for analyzing Dynamo and Grasshopper files with workflow extraction, script analysis, and C# migration guidance",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mirco Bianchini",
+        "url": "https://github.com/sonomirco"
+      },
+      "homepage": "https://github.com/sonomirco/agents-and-commands",
+      "repository": "https://github.com/sonomirco/agents-and-commands",
+      "license": "Apache-2.0",
+      "keywords": [
+        "aec",
+        "grasshopper",
+        "dynamo",
+        "bim",
+        "analysis",
+        "revit"
+      ],
+      "category": "aec",
+      "strict": false,
+      "agents": [
+        "./agents/grasshopper-analyzer.md",
+        "./agents/aec-research-consultant.md"
+      ],
+      "skills": [
+        "./skills/grasshopper-analyzer/SKILL.md",
+        "./skills/dynamo-analyzer/SKILL.md"
+      ]
+    },
+    {
+      "name": "backend-architecture",
+      "source": "./plugins/backend-architecture",
+      "description": "Backend system architecture, API design, microservices, and security patterns for scalable applications",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mirco Bianchini",
+        "url": "https://github.com/sonomirco"
+      },
+      "homepage": "https://github.com/sonomirco/agents-and-commands",
+      "repository": "https://github.com/sonomirco/agents-and-commands",
+      "license": "Apache-2.0",
+      "keywords": [
+        "backend",
+        "architecture",
+        "api",
+        "microservices",
+        "security",
+        "design"
+      ],
+      "category": "architecture",
+      "strict": false,
+      "agents": [
+        "./agents/backend-architect.md",
+        "./agents/backend-security-coder.md",
+        "./agents/api-documenter.md"
+      ]
+    },
+    {
+      "name": "python-development",
+      "source": "./plugins/python-development",
+      "description": "Modern Python 3.12+ development with async patterns, FastAPI, Django, and production-ready practices",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mirco Bianchini",
+        "url": "https://github.com/sonomirco"
+      },
+      "homepage": "https://github.com/sonomirco/agents-and-commands",
+      "repository": "https://github.com/sonomirco/agents-and-commands",
+      "license": "Apache-2.0",
+      "keywords": [
+        "python",
+        "async",
+        "fastapi",
+        "django",
+        "development"
+      ],
+      "category": "development",
+      "strict": false,
+      "agents": [
+        "./agents/python-pro.md",
+        "./agents/python-developer.md"
+      ]
+    },
+    {
+      "name": "dotnet-development",
+      "source": "./plugins/dotnet-development",
+      "description": "Modern C#/.NET development with testing, performance optimization, and best practices",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mirco Bianchini",
+        "url": "https://github.com/sonomirco"
+      },
+      "homepage": "https://github.com/sonomirco/agents-and-commands",
+      "repository": "https://github.com/sonomirco/agents-and-commands",
+      "license": "Apache-2.0",
+      "keywords": [
+        "csharp",
+        "dotnet",
+        "testing",
+        "performance"
+      ],
+      "category": "development",
+      "strict": false,
+      "agents": [
+        "./agents/csharp-pro.md"
+      ]
+    },
+    {
+      "name": "quality-and-testing",
+      "source": "./plugins/quality-and-testing",
+      "description": "Test-driven development, plan validation, and quality assurance workflows with Codex integration",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mirco Bianchini",
+        "url": "https://github.com/sonomirco"
+      },
+      "homepage": "https://github.com/sonomirco/agents-and-commands",
+      "repository": "https://github.com/sonomirco/agents-and-commands",
+      "license": "Apache-2.0",
+      "keywords": [
+        "testing",
+        "tdd",
+        "validation",
+        "quality",
+        "codex"
+      ],
+      "category": "quality",
+      "strict": false,
+      "agents": [
+        "./agents/tdd-orchestrator.md",
+        "./agents/plan-validator.md"
+      ]
+    },
+    {
+      "name": "documentation-and-visualization",
+      "source": "./plugins/documentation-and-visualization",
+      "description": "Technical documentation, diagrams, prompt engineering, and visual communication tools",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mirco Bianchini",
+        "url": "https://github.com/sonomirco"
+      },
+      "homepage": "https://github.com/sonomirco/agents-and-commands",
+      "repository": "https://github.com/sonomirco/agents-and-commands",
+      "license": "Apache-2.0",
+      "keywords": [
+        "documentation",
+        "diagrams",
+        "mermaid",
+        "prompts",
+        "visualization"
+      ],
+      "category": "documentation",
+      "strict": false,
+      "agents": [
+        "./agents/mermaid-expert.md",
+        "./agents/prompt-engineer.md"
+      ]
+    },
+    {
+      "name": "research-and-analysis",
+      "source": "./plugins/research-and-analysis",
+      "description": "Codebase research, document parsing, and large-scale analysis tools for understanding complex systems",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mirco Bianchini",
+        "url": "https://github.com/sonomirco"
+      },
+      "homepage": "https://github.com/sonomirco/agents-and-commands",
+      "repository": "https://github.com/sonomirco/agents-and-commands",
+      "license": "Apache-2.0",
+      "keywords": [
+        "research",
+        "analysis",
+        "codebase",
+        "documents",
+        "parsing"
+      ],
+      "category": "research",
+      "strict": false,
+      "agents": [
+        "./agents/codebase-researcher.md",
+        "./agents/document-parser-searcher.md"
+      ]
+    },
+    {
+      "name": "workflow-orchestration",
+      "source": "./plugins/workflow-orchestration",
+      "description": "Multi-step workflow commands for codebase context generation and experimental development",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mirco Bianchini",
+        "url": "https://github.com/sonomirco"
+      },
+      "homepage": "https://github.com/sonomirco/agents-and-commands",
+      "repository": "https://github.com/sonomirco/agents-and-commands",
+      "license": "Apache-2.0",
+      "keywords": [
+        "workflows",
+        "orchestration",
+        "context",
+        "experimentation"
+      ],
+      "category": "workflows",
+      "strict": false,
+      "commands": [
+        "./commands/generate-code-base-context.md",
+        "./commands/experiment-development.md"
+      ]
+    },
+    {
+      "name": "prompt-templates",
+      "source": "./plugins/prompt-templates",
+      "description": "Reusable prompt templates for precision writing, response humanization, and hallucination reduction",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mirco Bianchini",
+        "url": "https://github.com/sonomirco"
+      },
+      "homepage": "https://github.com/sonomirco/agents-and-commands",
+      "repository": "https://github.com/sonomirco/agents-and-commands",
+      "license": "Apache-2.0",
+      "keywords": [
+        "prompts",
+        "templates",
+        "writing",
+        "accuracy"
+      ],
+      "category": "prompts",
+      "strict": false,
+      "commands": [
+        "./commands/clear-and-accurate.md",
+        "./commands/humanise-response.md",
+        "./commands/reduce-hallucination.md"
+      ]
+    },
+    {
+      "name": "markdown-utilities",
+      "source": "./plugins/markdown-utilities",
+      "description": "Markdown to XML conversion skill for article formatting and publishing workflows",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mirco Bianchini",
+        "url": "https://github.com/sonomirco"
+      },
+      "homepage": "https://github.com/sonomirco/agents-and-commands",
+      "repository": "https://github.com/sonomirco/agents-and-commands",
+      "license": "Apache-2.0",
+      "keywords": [
+        "markdown",
+        "xml",
+        "conversion",
+        "publishing"
+      ],
+      "category": "utilities",
+      "strict": false,
+      "skills": [
+        "./skills/markdown-to-xml/SKILL.md"
+      ]
+    }
+  ]
+}

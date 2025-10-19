@@ -1,0 +1,19 @@
+{
+  "skills": [
+    {
+      "name": "grasshopper-analyzer",
+      "path": "plugins/aec-analysis-toolkit/skills/grasshopper-analyzer",
+      "description": "Analyze Grasshopper (.ghx/.xml) files with workflow extraction and C# migration guidance"
+    },
+    {
+      "name": "dynamo-analyzer",
+      "path": "plugins/aec-analysis-toolkit/skills/dynamo-analyzer",
+      "description": "Analyze Dynamo (.dyn) graphs with script extraction and Revit API patterns"
+    },
+    {
+      "name": "markdown-to-xml",
+      "path": "plugins/markdown-utilities/skills/markdown-to-xml",
+      "description": "Convert markdown articles to XML format with preserved formatting"
+    }
+  ]
+}
