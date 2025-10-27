@@ -6,7 +6,7 @@ A curated repository of agent commands and prompt templates, specifically for th
 
 This repository provides ready-to-use building blocks for effective, agent-driven development:
 
-- **14 specialized agents** across architecture, languages, testing, documentation, and AEC
+- **17 specialized agents** across architecture, languages, testing, documentation, and AEC
 - **2 workflow commands** for context generation and experimentation
 - **4 prompt templates** for precision writing and accuracy
 - **3 skills** for AEC analysis and markdown conversion
@@ -231,7 +231,7 @@ MCP setup (optional):
 
 ## Available plugins
 
-The 14 agents, 2 commands, 4 prompts, and 3 skills are organized into **10 focused plugins** optimized for granular installation:
+The 17 agents, 2 commands, 4 prompts, and 3 skills are organized into **10 focused plugins** optimized for granular installation:
 
 | Plugin | Description | Agents | Commands | Skills |
 |--------|-------------|--------|----------|--------|
@@ -239,9 +239,9 @@ The 14 agents, 2 commands, 4 prompts, and 3 skills are organized into **10 focus
 | **backend-architecture** | API design, microservices, security patterns | 3 | 0 | 0 |
 | **python-development** | Modern Python 3.12+, async, FastAPI/Django | 2 | 0 | 0 |
 | **dotnet-development** | C#/.NET with testing and performance | 1 | 0 | 0 |
-| **quality-and-testing** | TDD, plan validation, Codex integration | 2 | 0 | 0 |
+| **quality-and-testing** | TDD, plan validation, code quality review, Codex integration | 3 | 0 | 0 |
 | **documentation-and-visualization** | Diagrams, prompts, technical writing | 2 | 0 | 0 |
-| **research-and-analysis** | Codebase research, document parsing | 2 | 0 | 0 |
+| **research-and-analysis** | Codebase research, document parsing, pattern analysis, best practices | 4 | 0 | 0 |
 | **workflow-orchestration** | Context generation, experimental development | 0 | 2 | 0 |
 | **prompt-templates** | Precision writing, accuracy templates | 0 | 3 | 0 |
 | **markdown-utilities** | Markdown to XML conversion | 0 | 0 | 1 |
@@ -264,6 +264,7 @@ The 14 agents, 2 commands, 4 prompts, and 3 skills are organized into **10 focus
 
 - [tdd-orchestrator](agents/tdd-orchestrator.md) (opus) — Red/green/refactor workflow leadership
 - [plan-validator](agents/plan-validator.md) (opus) — Validates and iteratively upgrades plans via Codex feedback loops
+- [code-simplicity-reviewer](agents/code-simplicity-reviewer.md) (sonnet) — Reviews code for simplicity, minimalism, and YAGNI principles
 
 ### Documentation & visualization
 
@@ -274,6 +275,8 @@ The 14 agents, 2 commands, 4 prompts, and 3 skills are organized into **10 focus
 
 - [codebase-researcher](agents/codebase-researcher.md) (opus) — Study and summarize codebases
 - [document-parser-searcher](agents/document-parser-searcher.md) (haiku) — Parse and search large document sets
+- [pattern-recognition-specialist](agents/pattern-recognition-specialist.md) (sonnet) — Analyze code for design patterns, anti-patterns, and code quality
+- [best-practices-researcher](agents/best-practices-researcher.md) (sonnet) — Research and synthesize external best practices, documentation, and industry standards
 
 ### AEC domain
 
@@ -285,7 +288,7 @@ The 14 agents, 2 commands, 4 prompts, and 3 skills are organized into **10 focus
 Agents specify a target Claude model when appropriate:
 
 - haiku: 1
-- sonnet: 6
+- sonnet: 9
 - opus: 7
 
 Use lighter models for quick, deterministic tasks; sonnet for day-to-day engineering; opus for complex reasoning, architecture, and rigorous analysis.

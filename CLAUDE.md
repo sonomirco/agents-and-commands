@@ -2,7 +2,7 @@
 
 ## Repository Overview
 
-This is a Claude Code plugin marketplace repository focused on AEC (Architecture, Engineering, Construction) domain expertise. It contains 14 specialized agents, 2 workflow commands, 4 prompt templates, and 3 skills, all organized into **10 focused plugins** for granular installation. Covers backend architecture, Python development, testing, documentation, and AEC-specific tooling including Dynamo and Grasshopper analysis utilities.
+This is a Claude Code plugin marketplace repository focused on AEC (Architecture, Engineering, Construction) domain expertise. It contains 17 specialized agents, 2 workflow commands, 4 prompt templates, and 3 skills, all organized into **10 focused plugins** for granular installation. Covers backend architecture, Python development, testing, documentation, and AEC-specific tooling including Dynamo and Grasshopper analysis utilities.
 
 **Installation**: Add via `/plugin marketplace add sonomirco/agents-and-commands` and install specific plugins as needed for minimal token usage.
 
@@ -35,7 +35,8 @@ plugins/                     # Plugin-based organization (10 plugins)
 ├── quality-and-testing/
 │   └── agents/
 │       ├── tdd-orchestrator.md
-│       └── plan-validator.md
+│       ├── plan-validator.md
+│       └── code-simplicity-reviewer.md
 ├── documentation-and-visualization/
 │   └── agents/
 │       ├── mermaid-expert.md
@@ -43,7 +44,9 @@ plugins/                     # Plugin-based organization (10 plugins)
 ├── research-and-analysis/
 │   └── agents/
 │       ├── codebase-researcher.md
-│       └── document-parser-searcher.md
+│       ├── document-parser-searcher.md
+│       ├── pattern-recognition-specialist.md
+│       └── best-practices-researcher.md
 ├── workflow-orchestration/
 │   └── commands/
 │       ├── generate-code-base-context.md

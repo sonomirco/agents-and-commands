@@ -142,7 +142,8 @@
       "strict": false,
       "agents": [
         "./agents/tdd-orchestrator.md",
-        "./agents/plan-validator.md"
+        "./agents/plan-validator.md",
+        "./agents/code-simplicity-reviewer.md"
       ]
     },
     {
@@ -194,7 +195,9 @@
       "strict": false,
       "agents": [
         "./agents/codebase-researcher.md",
-        "./agents/document-parser-searcher.md"
+        "./agents/document-parser-searcher.md",
+        "./agents/pattern-recognition-specialist.md",
+        "./agents/best-practices-researcher.md"
       ]
     },
     {
