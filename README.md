@@ -401,9 +401,16 @@ Apache License 2.0 — see `LICENSE` for details.
 
 ## Resources
 
+### Official documentation
 - Claude Code documentation: https://docs.anthropic.com/en/docs/claude-code
 - Subagents: https://docs.anthropic.com/en/docs/claude-code/sub-agents
 - Claude Code on GitHub: https://github.com/anthropics/claude-code
+
+### Community resources
 - Awesome Claude Code: https://github.com/hesreallyhim/awesome-claude-code
 - Claude Code Templates: https://www.aitmpl.com
 - Awesome Codex: https://github.com/KarelDO/awesome-codex
+
+### Skills marketplaces and cross-platform tools
+- **Intellectronica Skills Marketplace** (http://skills.intellectronica.net/) — Community-curated collection of generic Claude Code skills across multiple domains. Browse for inspiration, reference implementations, or ready-to-use skills that complement the AEC-focused toolkit in this repository.
+- **OpenSkills** (https://github.com/numman-ali/openskills) — Cross-platform adapter that makes Claude Code skills accessible to other AI models and frameworks. Use this to extend your skills beyond Claude Code and maintain portability across different development environments.
