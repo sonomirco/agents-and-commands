@@ -411,6 +411,9 @@ Apache License 2.0 — see `LICENSE` for details.
 - Claude Code Templates: https://www.aitmpl.com
 - Awesome Codex: https://github.com/KarelDO/awesome-codex
 
+### External AECO LLM Collection
+- **[External AECO LLM Technologies Collection](EXTERNAL_AECO_COLLECTION.md)** — Comprehensive reference to 60+ external MCP servers, prompt libraries, and Claude Code skills found across the AECO ecosystem. Includes tools for Revit, Rhino, Tekla, AutoCAD, GIS platforms, and structural analysis software.
+
 ### Skills marketplaces and cross-platform tools
 - **Intellectronica Skills Marketplace** (http://skills.intellectronica.net/) — Community-curated collection of generic Claude Code skills across multiple domains. Browse for inspiration, reference implementations, or ready-to-use skills that complement the AEC-focused toolkit in this repository.
 - **OpenSkills** (https://github.com/numman-ali/openskills) — Cross-platform adapter that makes Claude Code skills accessible to other AI models and frameworks. Use this to extend your skills beyond Claude Code and maintain portability across different development environments.
