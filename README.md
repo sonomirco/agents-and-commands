@@ -13,6 +13,34 @@ This repository provides ready-to-use building blocks for effective, agent-drive
 
 All organized into **10 focused plugins** for granular installation via Claude Code marketplace, or install skills via the manifest-driven scripts.
 
+## Key concepts: Commands, Sub-Agents, and Skills
+
+To effectively use this repository, it's important to understand the distinction between the different types of resources provided:
+
+### 1. Commands (User-Driven Control)
+- **Definition:** Built-in directives used by the human operator.
+- **Role:** These are the manual controls of the CLI. They are typically prefixed with symbols like `/` (e.g., `/help`), `@` (to attach files), or `!` (shell escapes).
+- **Differentiation:** Commands are user-facing. They allow the human to manage the session, configure settings, or provide explicit data to the model. They do not require the model to "decide" how to use them; they are instructions from the human to the application.
+
+### 2. Sub-Agents (Delegated Complexity)
+- **Definition:** Specialized, independent AI agents with their own unique system prompts and toolsets.
+- **Role:** Used for "offloading" complex or context-heavy tasks. For example, a `codebase_investigator` is a sub-agent that knows how to map a repository.
+- **Differentiation:** Sub-agents are delegation targets. The main agent decides to call a sub-agent when a task is too big for its own context or requires a specific "persona." Think of it as the main agent hiring a consultant to do a specific job and return only the relevant results, keeping the main conversation "clean."
+
+### 3. Skills (Procedural Expertise)
+- **Definition:** Self-contained packages of instructions and resources that augment the main agent's capabilities.
+- **Role:** Activated via the `activate_skill` tool when the model identifies a task that matches a specific expertise (like the `skill-creator`).
+- **Differentiation:** Skills are contextual augmentations. Unlike sub-agents (which are separate "brains"), a skill is a set of "expert instructions" that are injected directly into the main agent's current context. It changes how the main agent thinks and acts for the duration of a task, providing it with a specific procedural workflow it didn't previously have.
+
+### Summary Table
+
+| Feature | Commands | Sub-Agents | Skills |
+| :--- | :--- | :--- | :--- |
+| **Who uses it?** | The Human User | The Main Agent | The Main Agent |
+| **Primary Goal** | Tool Management | Task Delegation | Expertise Acquisition |
+| **Context Impact** | Manual UI/Data Control | Keeps main context small | Injects procedural rules |
+| **Example** | `/help`, `@src/main.py` | `codebase_investigator` | `skill-creator` |
+
 ## Repository structure
 
 ```
